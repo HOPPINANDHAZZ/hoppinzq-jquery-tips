@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<style>
+		.div{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			border: #000000 1px solid;
+		}
+		#test1{
+			top: 200px;
+			left: 50px;
+		}
+		#test2{
+			top: 400px;
+			left: 200px;
+		}
+		#test3{
+			top: 600px;
+			left: 100px;
+		}
+		
+	</style>
+	<body>
+		<div class="div" id="test1"></div>
+		<div class="div" id="test2"></div>
+		<div class="div" id="test3"></div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.zq-tips.js"></script>
+	<script>
+		$(function(){
+			//配置项tipsOption：
+			// var tipsOption={
+			// 	tips:[ //提示
+			// 		{
+			// 			$element: $("#test1"), //要绑定的JQ对象
+			// 			popover: {
+			// 				title: 'NO.1', //标题
+			// 				description: '网易云个人信息区域', //内容
+			// 				position: 'bottom' //提示出现的位置：上下左右 top bottom left right
+			// 			},
+			// 			endCallback: function() {
+			// 				//点击取消回调
+			// 			}
+			// 		}
+			// 	],
+			// 	"cancel": {
+			// 		cancelFunc: function() {
+			// 			//点击取消回调
+			// 		}
+			// 	},
+			// 	"ok": {
+			// 		okFunc: function() {
+			// 			//点击确定回调
+			// 		}
+			// 	}
+			// }
+			var tips = [{
+				$element: $("#test1"), 
+				popover: {
+					title: 'NO.1',
+					description: '1111111',
+					position: 'top'
+				}
+			}, {
+				$element: $("#test2"),
+				popover: {
+					title: 'NO.2',
+					description: '22222222222',
+					position: 'bottom'
+				}
+			}, {
+				$element: $("#test3"),
+				popover: {
+					title: 'NO.3',
+					description: '3333333333',
+					position: 'right'
+				},
+				endCallback: function() {
+					alert("取消");
+				}
+			}];
+			var tipsOption = {
+				"cancel": {
+					cancelFunc: function() {
+						alert("取消");
+					}
+				},
+				"ok": {
+					okFunc: function() {
+						alert("ok");
+					}
+				}
+			}
+			tipsOption.tips = tips;
+			$.tips(tipsOption);
+		})
+	</script>
+</html>
