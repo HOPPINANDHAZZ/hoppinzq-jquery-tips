@@ -15,3 +15,4 @@
 2.  样式及模板的渲染。
 3.  JQuery渲染dom、动画函数的使用及跟随滚动。
 4.  无任何css，只需引入JQuery和该js即可使用，不会出现任何样式冲突。
+5.  可通过cdn引入`<script src="http://hoppinzq.com/zui/static/js/ztips.js"></script>`
